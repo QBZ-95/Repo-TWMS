@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gree.twms.dao.VersionMapper" >
+  <resultMap id="BaseResultMap" type="com.gree.twms.pojo.Version" >
+    <result column="PCBID" property="pcbid" jdbcType="VARCHAR" />
+    <result column="oldVersion" property="oldversion" jdbcType="VARCHAR" />
+    <result column="newVersion" property="newversion" jdbcType="VARCHAR" />
+    <result column="ICTChenge" property="ictchenge" jdbcType="VARCHAR" />
+    <result column="FCTChenge" property="fctchenge" jdbcType="VARCHAR" />
+    <result column="arriveTime" property="arrivetime" jdbcType="TIMESTAMP" />
+    <result column="ICTChengeID" property="ictchengeid" jdbcType="VARCHAR" />
+    <result column="FCTChengeID" property="fctchengeid" jdbcType="VARCHAR" />
+    <result column="OTFChengeID" property="otfchengeid" jdbcType="VARCHAR" />
+    <result column="ICFTChengeID" property="icftchengeid" jdbcType="VARCHAR" />
+    <result column="chengeTime" property="chengetime" jdbcType="TIMESTAMP" />
+    <result column="completion" property="completion" jdbcType="VARCHAR" />
+    <result column="remarks1" property="remarks1" jdbcType="VARCHAR" />
+    <result column="remarks2" property="remarks2" jdbcType="VARCHAR" />
+    <result column="remarks3" property="remarks3" jdbcType="VARCHAR" />
+    <result column="remarks4" property="remarks4" jdbcType="VARCHAR" />
+    <result column="remarks5" property="remarks5" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.gree.twms.pojo.Version" >
+    insert into version (PCBID, oldVersion, newVersion, 
+      ICTChenge, FCTChenge, arriveTime, 
+      ICTChengeID, FCTChengeID, OTFChengeID, 
+      ICFTChengeID, chengeTime, completion, 
+      remarks1, remarks2, remarks3, 
+      remarks4, remarks5)
+    values (#{pcbid,jdbcType=VARCHAR}, #{oldversion,jdbcType=VARCHAR}, #{newversion,jdbcType=VARCHAR}, 
+      #{ictchenge,jdbcType=VARCHAR}, #{fctchenge,jdbcType=VARCHAR}, #{arrivetime,jdbcType=TIMESTAMP}, 
+      #{ictchengeid,jdbcType=VARCHAR}, #{fctchengeid,jdbcType=VARCHAR}, #{otfchengeid,jdbcType=VARCHAR}, 
+      #{icftchengeid,jdbcType=VARCHAR}, #{chengetime,jdbcType=TIMESTAMP}, #{completion,jdbcType=VARCHAR}, 
+      #{remarks1,jdbcType=VARCHAR}, #{remarks2,jdbcType=VARCHAR}, #{remarks3,jdbcType=VARCHAR}, 
+      #{remarks4,jdbcType=VARCHAR}, #{remarks5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gree.twms.pojo.Version" >
+    insert into version
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pcbid != null" >
+        PCBID,
+      </if>
+      <if test="oldversion != null" >
+        oldVersion,
+      </if>
+      <if test="newversion != null" >
+        newVersion,
+      </if>
+      <if test="ictchenge != null" >
+        ICTChenge,
+      </if>
+      <if test="fctchenge != null" >
+        FCTChenge,
+      </if>
+      <if test="arrivetime != null" >
+        arriveTime,
+      </if>
+      <if test="ictchengeid != null" >
+        ICTChengeID,
+      </if>
+      <if test="fctchengeid != null" >
+        FCTChengeID,
+      </if>
+      <if test="otfchengeid != null" >
+        OTFChengeID,
+      </if>
+      <if test="icftchengeid != null" >
+        ICFTChengeID,
+      </if>
+      <if test="chengetime != null" >
+        chengeTime,
+      </if>
+      <if test="completion != null" >
+        completion,
+      </if>
+      <if test="remarks1 != null" >
+        remarks1,
+      </if>
+      <if test="remarks2 != null" >
+        remarks2,
+      </if>
+      <if test="remarks3 != null" >
+        remarks3,
+      </if>
+      <if test="remarks4 != null" >
+        remarks4,
+      </if>
+      <if test="remarks5 != null" >
+        remarks5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pcbid != null" >
+        #{pcbid,jdbcType=VARCHAR},
+      </if>
+      <if test="oldversion != null" >
+        #{oldversion,jdbcType=VARCHAR},
+      </if>
+      <if test="newversion != null" >
+        #{newversion,jdbcType=VARCHAR},
+      </if>
+      <if test="ictchenge != null" >
+        #{ictchenge,jdbcType=VARCHAR},
+      </if>
+      <if test="fctchenge != null" >
+        #{fctchenge,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivetime != null" >
+        #{arrivetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ictchengeid != null" >
+        #{ictchengeid,jdbcType=VARCHAR},
+      </if>
+      <if test="fctchengeid != null" >
+        #{fctchengeid,jdbcType=VARCHAR},
+      </if>
+      <if test="otfchengeid != null" >
+        #{otfchengeid,jdbcType=VARCHAR},
+      </if>
+      <if test="icftchengeid != null" >
+        #{icftchengeid,jdbcType=VARCHAR},
+      </if>
+      <if test="chengetime != null" >
+        #{chengetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="completion != null" >
+        #{completion,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null" >
+        #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null" >
+        #{remarks2,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks3 != null" >
+        #{remarks3,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks4 != null" >
+        #{remarks4,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks5 != null" >
+        #{remarks5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/avatars" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/font" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/fonts" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/templates/top.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" charset="GBK" />
+  </component>
+</project>

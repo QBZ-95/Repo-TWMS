@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gree.twms.dao.WarehouseMapper" >
+  <resultMap id="BaseResultMap" type="com.gree.twms.pojo.Warehouse" >
+    <id column="sID" property="sid" jdbcType="VARCHAR" />
+    <result column="tID" property="tid" jdbcType="VARCHAR" />
+    <result column="site" property="site" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="remarks1" property="remarks1" jdbcType="VARCHAR" />
+    <result column="remarks2" property="remarks2" jdbcType="VARCHAR" />
+    <result column="remarks3" property="remarks3" jdbcType="VARCHAR" />
+    <result column="remarks4" property="remarks4" jdbcType="VARCHAR" />
+    <result column="remarks5" property="remarks5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sID, tID, site, state, remarks1, remarks2, remarks3, remarks4, remarks5
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from warehouse
+    where sID = #{sid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from warehouse
+    where sID = #{sid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gree.twms.pojo.Warehouse" >
+    insert into warehouse (sID, tID, site, 
+      state, remarks1, remarks2, 
+      remarks3, remarks4, remarks5
+      )
+    values (#{sid,jdbcType=VARCHAR}, #{tid,jdbcType=VARCHAR}, #{site,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{remarks1,jdbcType=VARCHAR}, #{remarks2,jdbcType=VARCHAR}, 
+      #{remarks3,jdbcType=VARCHAR}, #{remarks4,jdbcType=VARCHAR}, #{remarks5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gree.twms.pojo.Warehouse" >
+    insert into warehouse
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        sID,
+      </if>
+      <if test="tid != null" >
+        tID,
+      </if>
+      <if test="site != null" >
+        site,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="remarks1 != null" >
+        remarks1,
+      </if>
+      <if test="remarks2 != null" >
+        remarks2,
+      </if>
+      <if test="remarks3 != null" >
+        remarks3,
+      </if>
+      <if test="remarks4 != null" >
+        remarks4,
+      </if>
+      <if test="remarks5 != null" >
+        remarks5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        #{sid,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="site != null" >
+        #{site,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null" >
+        #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null" >
+        #{remarks2,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks3 != null" >
+        #{remarks3,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks4 != null" >
+        #{remarks4,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks5 != null" >
+        #{remarks5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gree.twms.pojo.Warehouse" >
+    update warehouse
+    <set >
+      <if test="tid != null" >
+        tID = #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="site != null" >
+        site = #{site,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null" >
+        remarks1 = #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null" >
+        remarks2 = #{remarks2,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks3 != null" >
+        remarks3 = #{remarks3,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks4 != null" >
+        remarks4 = #{remarks4,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks5 != null" >
+        remarks5 = #{remarks5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sID = #{sid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gree.twms.pojo.Warehouse" >
+    update warehouse
+    set tID = #{tid,jdbcType=VARCHAR},
+      site = #{site,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      remarks1 = #{remarks1,jdbcType=VARCHAR},
+      remarks2 = #{remarks2,jdbcType=VARCHAR},
+      remarks3 = #{remarks3,jdbcType=VARCHAR},
+      remarks4 = #{remarks4,jdbcType=VARCHAR},
+      remarks5 = #{remarks5,jdbcType=VARCHAR}
+    where sID = #{sid,jdbcType=VARCHAR}
+  </update>
+</mapper>

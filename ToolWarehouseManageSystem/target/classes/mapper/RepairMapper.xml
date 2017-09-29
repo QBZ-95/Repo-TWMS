@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gree.twms.dao.RepairMapper" >
+  <resultMap id="BaseResultMap" type="com.gree.twms.pojo.Repair" >
+    <result column="shift" property="shift" jdbcType="VARCHAR" />
+    <result column="sendTime" property="sendtime" jdbcType="TIMESTAMP" />
+    <result column="sendPeople" property="sendpeople" jdbcType="VARCHAR" />
+    <result column="team" property="team" jdbcType="VARCHAR" />
+    <result column="tName" property="tname" jdbcType="VARCHAR" />
+    <result column="tModel" property="tmodel" jdbcType="VARCHAR" />
+    <result column="tID" property="tid" jdbcType="INTEGER" />
+    <result column="sendFaultDescription" property="sendfaultdescription" jdbcType="VARCHAR" />
+    <result column="repairFaultDescription" property="repairfaultdescription" jdbcType="VARCHAR" />
+    <result column="handMeasures" property="handmeasures" jdbcType="VARCHAR" />
+    <result column="repairPeople" property="repairpeople" jdbcType="VARCHAR" />
+    <result column="sendMethod" property="sendmethod" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="remarks1" property="remarks1" jdbcType="VARCHAR" />
+    <result column="remarks2" property="remarks2" jdbcType="VARCHAR" />
+    <result column="remarks3" property="remarks3" jdbcType="VARCHAR" />
+    <result column="remarks4" property="remarks4" jdbcType="VARCHAR" />
+    <result column="remarks5" property="remarks5" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.gree.twms.pojo.Repair" >
+    insert into repair (shift, sendTime, sendPeople, 
+      team, tName, tModel, 
+      tID, sendFaultDescription, repairFaultDescription, 
+      handMeasures, repairPeople, sendMethod, 
+      remark, remarks1, remarks2, 
+      remarks3, remarks4, remarks5
+      )
+    values (#{shift,jdbcType=VARCHAR}, #{sendtime,jdbcType=TIMESTAMP}, #{sendpeople,jdbcType=VARCHAR}, 
+      #{team,jdbcType=VARCHAR}, #{tname,jdbcType=VARCHAR}, #{tmodel,jdbcType=VARCHAR}, 
+      #{tid,jdbcType=INTEGER}, #{sendfaultdescription,jdbcType=VARCHAR}, #{repairfaultdescription,jdbcType=VARCHAR}, 
+      #{handmeasures,jdbcType=VARCHAR}, #{repairpeople,jdbcType=VARCHAR}, #{sendmethod,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{remarks1,jdbcType=VARCHAR}, #{remarks2,jdbcType=VARCHAR}, 
+      #{remarks3,jdbcType=VARCHAR}, #{remarks4,jdbcType=VARCHAR}, #{remarks5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gree.twms.pojo.Repair" >
+    insert into repair
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="shift != null" >
+        shift,
+      </if>
+      <if test="sendtime != null" >
+        sendTime,
+      </if>
+      <if test="sendpeople != null" >
+        sendPeople,
+      </if>
+      <if test="team != null" >
+        team,
+      </if>
+      <if test="tname != null" >
+        tName,
+      </if>
+      <if test="tmodel != null" >
+        tModel,
+      </if>
+      <if test="tid != null" >
+        tID,
+      </if>
+      <if test="sendfaultdescription != null" >
+        sendFaultDescription,
+      </if>
+      <if test="repairfaultdescription != null" >
+        repairFaultDescription,
+      </if>
+      <if test="handmeasures != null" >
+        handMeasures,
+      </if>
+      <if test="repairpeople != null" >
+        repairPeople,
+      </if>
+      <if test="sendmethod != null" >
+        sendMethod,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="remarks1 != null" >
+        remarks1,
+      </if>
+      <if test="remarks2 != null" >
+        remarks2,
+      </if>
+      <if test="remarks3 != null" >
+        remarks3,
+      </if>
+      <if test="remarks4 != null" >
+        remarks4,
+      </if>
+      <if test="remarks5 != null" >
+        remarks5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="shift != null" >
+        #{shift,jdbcType=VARCHAR},
+      </if>
+      <if test="sendtime != null" >
+        #{sendtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendpeople != null" >
+        #{sendpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="team != null" >
+        #{team,jdbcType=VARCHAR},
+      </if>
+      <if test="tname != null" >
+        #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="tmodel != null" >
+        #{tmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="sendfaultdescription != null" >
+        #{sendfaultdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="repairfaultdescription != null" >
+        #{repairfaultdescription,jdbcType=VARCHAR},
+      </if>
+      <if test="handmeasures != null" >
+        #{handmeasures,jdbcType=VARCHAR},
+      </if>
+      <if test="repairpeople != null" >
+        #{repairpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="sendmethod != null" >
+        #{sendmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null" >
+        #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null" >
+        #{remarks2,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks3 != null" >
+        #{remarks3,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks4 != null" >
+        #{remarks4,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks5 != null" >
+        #{remarks5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gree.twms.dao.ReviewMapper" >
+  <resultMap id="BaseResultMap" type="com.gree.twms.pojo.Review" >
+    <result column="tName" property="tname" jdbcType="VARCHAR" />
+    <result column="PCBModel" property="pcbmodel" jdbcType="VARCHAR" />
+    <result column="tID" property="tid" jdbcType="VARCHAR" />
+    <result column="reviewTime" property="reviewtime" jdbcType="TIMESTAMP" />
+    <result column="conclusion" property="conclusion" jdbcType="VARCHAR" />
+    <result column="organization" property="organization" jdbcType="VARCHAR" />
+    <result column="countersign" property="countersign" jdbcType="VARCHAR" />
+    <result column="examine" property="examine" jdbcType="VARCHAR" />
+    <result column="approval" property="approval" jdbcType="VARCHAR" />
+    <result column="enclosureURL" property="enclosureurl" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="remarks1" property="remarks1" jdbcType="VARCHAR" />
+    <result column="remarks2" property="remarks2" jdbcType="VARCHAR" />
+    <result column="remarks3" property="remarks3" jdbcType="VARCHAR" />
+    <result column="remarks4" property="remarks4" jdbcType="VARCHAR" />
+    <result column="remarks5" property="remarks5" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.gree.twms.pojo.Review" >
+    insert into review (tName, PCBModel, tID, 
+      reviewTime, conclusion, organization, 
+      countersign, examine, approval, 
+      enclosureURL, remarks, remarks1, 
+      remarks2, remarks3, remarks4, 
+      remarks5)
+    values (#{tname,jdbcType=VARCHAR}, #{pcbmodel,jdbcType=VARCHAR}, #{tid,jdbcType=VARCHAR}, 
+      #{reviewtime,jdbcType=TIMESTAMP}, #{conclusion,jdbcType=VARCHAR}, #{organization,jdbcType=VARCHAR}, 
+      #{countersign,jdbcType=VARCHAR}, #{examine,jdbcType=VARCHAR}, #{approval,jdbcType=VARCHAR}, 
+      #{enclosureurl,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{remarks1,jdbcType=VARCHAR}, 
+      #{remarks2,jdbcType=VARCHAR}, #{remarks3,jdbcType=VARCHAR}, #{remarks4,jdbcType=VARCHAR}, 
+      #{remarks5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gree.twms.pojo.Review" >
+    insert into review
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tname != null" >
+        tName,
+      </if>
+      <if test="pcbmodel != null" >
+        PCBModel,
+      </if>
+      <if test="tid != null" >
+        tID,
+      </if>
+      <if test="reviewtime != null" >
+        reviewTime,
+      </if>
+      <if test="conclusion != null" >
+        conclusion,
+      </if>
+      <if test="organization != null" >
+        organization,
+      </if>
+      <if test="countersign != null" >
+        countersign,
+      </if>
+      <if test="examine != null" >
+        examine,
+      </if>
+      <if test="approval != null" >
+        approval,
+      </if>
+      <if test="enclosureurl != null" >
+        enclosureURL,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="remarks1 != null" >
+        remarks1,
+      </if>
+      <if test="remarks2 != null" >
+        remarks2,
+      </if>
+      <if test="remarks3 != null" >
+        remarks3,
+      </if>
+      <if test="remarks4 != null" >
+        remarks4,
+      </if>
+      <if test="remarks5 != null" >
+        remarks5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tname != null" >
+        #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="pcbmodel != null" >
+        #{pcbmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewtime != null" >
+        #{reviewtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="conclusion != null" >
+        #{conclusion,jdbcType=VARCHAR},
+      </if>
+      <if test="organization != null" >
+        #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="countersign != null" >
+        #{countersign,jdbcType=VARCHAR},
+      </if>
+      <if test="examine != null" >
+        #{examine,jdbcType=VARCHAR},
+      </if>
+      <if test="approval != null" >
+        #{approval,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureurl != null" >
+        #{enclosureurl,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks1 != null" >
+        #{remarks1,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks2 != null" >
+        #{remarks2,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks3 != null" >
+        #{remarks3,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks4 != null" >
+        #{remarks4,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks5 != null" >
+        #{remarks5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
